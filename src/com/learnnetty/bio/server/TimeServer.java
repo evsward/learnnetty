@@ -23,7 +23,11 @@ public class TimeServer {
 			while (true) {
 				// 如果没有客户端接入，则主线程阻塞在server.accept();这行上。
 				socket = server.accept();
-				// ***
+				/**
+				 * 对当前socket连接进行服务端逻辑编程。
+				 * 每当有一个客户端接入，就要new一个线程来处理客户端的请求。
+				 * 一连接一线程
+				 */
 				new Thread(new TimeServerHandler(socket)).start();
 			}
 		} finally {
