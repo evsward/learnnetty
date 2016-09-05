@@ -6,6 +6,13 @@ import java.net.Socket;
 
 import com.learnnetty.bio.server.TimeServerHandler;
 
+/**
+ * 
+ * 加了一个线程池来代替直接new thread（），就可以多个线程处理多个任务，比一对一高效些。
+ * 
+ * @author xp020154
+ *
+ */
 public class TimeServer {
 	public static void main(String[] args) throws IOException {
 		int port = 8881;
@@ -25,10 +32,8 @@ public class TimeServer {
 			while (true) {
 				socket = server.accept();
 				/**
-				 * 仍旧使用TimeServerHandler的服务端处理逻辑。
-				 * 但是用线程池代替了new Thread(***).start();
-				 * 解决了线程连接一对一的资源耗尽问题，
-				 * 但底层仍旧采用的是BIO模型。
+				 * 仍旧使用TimeServerHandler的服务端处理逻辑。 但是用线程池代替了new
+				 * Thread(***).start(); 解决了线程连接一对一的资源耗尽问题， 但底层仍旧采用的是BIO模型。
 				 */
 				singleExecutor.execute(new TimeServerHandler(socket));
 			}
