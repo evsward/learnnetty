@@ -8,7 +8,8 @@ import com.learnnetty.bio.server.TimeServerHandler;
 
 /**
  * 
- * 加了一个线程池来代替直接new thread（），就可以多个线程处理多个任务，比一对一高效些。
+ * 加了一个线程池来代替直接new thread（），就可以多个线程处理多个任务，比一对一高效些
+ * ***客户端Client与bio通用。
  * 
  * @author xp020154
  *
