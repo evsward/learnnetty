@@ -6,3 +6,7 @@
 
 - AIO AsynchronousSocketChannel
 - next AIO's client. P51.
+
+---
+
+- next netty client. P73.
