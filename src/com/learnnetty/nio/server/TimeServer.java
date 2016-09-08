@@ -3,6 +3,7 @@ package com.learnnetty.nio.server;
 import java.io.IOException;
 
 /**
+ * NIO，non-block IO 非阻塞IO
  * NIO，说白了就是**遍历标识位的方式Selector**来代替生硬的用线程来阻塞等待
  * 
  * @author xp020154
