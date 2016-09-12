@@ -7,6 +7,8 @@ import io.netty.channel.ChannelHandlerContext;
 
 public class TimeServerHandler extends ChannelHandlerAdapter {
 
+	private int counter;
+
 	@Override
 	public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
 		ByteBuf buf = (ByteBuf) msg;
@@ -14,13 +16,14 @@ public class TimeServerHandler extends ChannelHandlerAdapter {
 		byte[] req = new byte[buf.readableBytes()];
 		// 将buf中的字节复制到req中，相当于buffer.get(req);
 		buf.readBytes(req);
-		String body = new String(req, "UTF-8");
-		System.out.println("The time server receive order: " + body);
+		String body = new String(req, "UTF-8").substring(0, req.length - System.getProperty("line.separator").length());
+		System.out.println("The time server receive order: " + body + "; the counter is : " + ++counter);
 		String currentTime = "QUERY TIME ORDER".equalsIgnoreCase(body)
 				? new java.util.Date(System.currentTimeMillis()).toString() : "BAD ORDER";
+		currentTime = currentTime + System.getProperty("line.separator");
 		ByteBuf resp = Unpooled.copiedBuffer(currentTime.getBytes());
 		// 原来的doWrite，异步发送应答消息给客户端。这里已经封装好，直接调用write方法即可。
-		ctx.write(resp);
+		ctx.writeAndFlush(resp);
 	}
 
 	@Override

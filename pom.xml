@@ -25,6 +25,27 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.2.1</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<executable>java</executable>
+					<arguments>
+						<argument>-classpath</argument>
+						<classpath>
+						</classpath>
+						<argument>com.learnnetty.netty.server.TimeServer</argument>
+					</arguments>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 </project>
