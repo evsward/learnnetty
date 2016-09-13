@@ -11,3 +11,6 @@
 
 - next netty client. P73.
 - P91
+---
+
+- use telnet as a client to test the server's code.
