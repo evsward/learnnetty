@@ -11,6 +11,12 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.codec.string.StringDecoder;
 
+/**
+ * LineBasedFrameDecoder: 根据回车换行符来判断分割字符进行解码。
+ * 
+ * @author xp020154
+ *
+ */
 public class TimeClient {
 	public void connect(int port, String host) throws Exception {
 		// 配置客户端NIO线程组(处理客户端IO读写的NioEventLoopGroup)
