@@ -1,6 +1,6 @@
-package com.learnnetty.handler.codec.msgpack.client;
+package com.learnnetty.codec.msgpack.client;
 
-import com.learnnetty.handler.codec.msgpack.vo.UserInfo;
+import com.learnnetty.codec.msgpack.vo.UserInfo;
 
 import io.netty.channel.ChannelHandlerAdapter;
 import io.netty.channel.ChannelHandlerContext;

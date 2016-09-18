@@ -1,4 +1,4 @@
-package com.learnnetty.handler.codec.msgpack.vo;
+package com.learnnetty.codec.msgpack.vo;
 
 public class UserInfo {
 	private String name;

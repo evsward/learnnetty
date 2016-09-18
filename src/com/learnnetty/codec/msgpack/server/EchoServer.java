@@ -1,7 +1,7 @@
-package com.learnnetty.handler.codec.msgpack.server;
+package com.learnnetty.codec.msgpack.server;
 
-import com.learnnetty.handler.codec.msgpack.MsgpackDecoder;
-import com.learnnetty.handler.codec.msgpack.MsgpackEncoder;
+import com.learnnetty.codec.msgpack.MsgpackDecoder;
+import com.learnnetty.codec.msgpack.MsgpackEncoder;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;

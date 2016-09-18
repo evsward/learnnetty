@@ -1,4 +1,4 @@
-package com.learnnetty.handler.codec.msgpack;
+package com.learnnetty.codec.msgpack;
 
 import java.util.List;
 
