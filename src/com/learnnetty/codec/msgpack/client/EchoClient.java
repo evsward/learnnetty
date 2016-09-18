@@ -14,6 +14,12 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.codec.LengthFieldPrepender;
 
+/**
+ * LengthFieldPrepender和LengthFieldFrameDecoder: 使采取为消息加入消息头用来指定消息长度的方式编解码。
+ * 
+ * @author xp020154
+ *
+ */
 public class EchoClient {
 	public void connect(int port, String host) throws Exception {
 		EventLoopGroup group = new NioEventLoopGroup();
